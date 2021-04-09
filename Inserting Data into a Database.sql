@@ -66,3 +66,21 @@ WHERE product_purchase_date IS NULL
 SELECT * 
 FROM products 
 WHERE product_purchase_date IS NOT NULL
+
+-- Return all fields of products where the purchase price is less than 2000
+SELECT * 
+FROM products 
+WHERE product_price < 2000
+
+-- Deletes one particular record/row
+DELETE 
+FROM products 
+WHERE product_id = 4
+
+-- Data Manipulation Language (DML)
+-- C = CREATE => SQL: INSERT
+-- R = READ =>   SQL: SELECT 
+-- U = UPDATE => SQL: UPDATE 
+-- D = DELETE => SQL: DELETE
+
+-- END OF DML Commands
