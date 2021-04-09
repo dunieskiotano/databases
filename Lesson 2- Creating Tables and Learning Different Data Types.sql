@@ -25,6 +25,7 @@ CREATE TABLE nci_student
 	address VARCHAR(100) NOT NULL	
 )
 
+
 -- End of table creation
 
 -- Insert data section
@@ -83,6 +84,14 @@ SELECT NOW() AS "Date & Time", DATE(NOW()) AS "Date Portion", TIME(NOW()) AS "Ti
 -- This prints all records starting at 5 (offset) and only print 6 records (limit)
 SELECT CONCAT(std_id, '=> OH ', firstname, '. I know where you live now. You dont believe me? Well, here is it. You live @ ', address)  AS "I Know what you did last summer"
 FROM nci_student LIMIT 6 OFFSET 4
+
+-- This returns:
+-- NCI005=> OH Joven. I know where you live now. You dont believe me? Well, here is it. You live @ 0000 East St, Washington, DC 20002
+-- NCI006=> OH Yasin. I know where you live now. You dont believe me? Well, here is it. You live @ 1234 East St. Ashburn VA 20148
+-- NCI007=> OH Jing. I know where you live now. You dont believe me? Well, here is it. You live @ 12334 Carry Lark Ct. ,Fairfax, VA 22033
+-- NCI008=> OH Joe. I know where you live now. You dont believe me? Well, here is it. You live @ 245 Street Rd City, Maine 64334
+-- NCI009=> OH Rufina. I know where you live now. You dont believe me? Well, here is it. You live @ 2222 Freedom sq Chantilly VA 20169
+-- NCI010=> OH Pushpa. I know where you live now. You dont believe me? Well, here is it. You live @ 7888 liberty sq, Ny, 30939
 
 -- END OF READ SECTION
 
