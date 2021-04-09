@@ -22,10 +22,9 @@ CREATE TABLE nci_student
 	class VARCHAR(20) NOT NULL,
 	phone VARCHAR(10) NOT NULL,
 	email VARCHAR(25) NOT NULL,
-	address VARCHAR(100) NOT NULL,
-	start_time TIMESTAMP NOT NULL,
-	end_time TIMESTAMP NOT NULL
+	address VARCHAR(100) NOT NULL	
 )
+
 -- End of table creation
 
 -- Insert data section
