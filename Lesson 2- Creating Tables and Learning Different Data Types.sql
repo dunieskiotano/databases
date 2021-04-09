@@ -34,21 +34,22 @@ INSERT INTO employee (employee_firstname, employee_lastname, employee_phone, emp
 INSERT INTO nci_student (std_id, firstname, lastname, class, phone, email, address) VALUES
 ('NCI001', 'Dunieski', 'Otano', 're/Start', '1234567890', 'example@example.com', '1234 SW 4th Ave Miami, FL 33122'),
 ('NCI002', 'Mtaghi', 'Gui', 'AWS Practitioner','911911911', 'USA@USA@.com', '911 Street, USA'),
-('NCI003', 'Bayrakdar', 'Omer', 're/Start', '2026765848', 'hellooo@gmail.com', '3345 Wilson Blvd. #1340, Alexandria, VA, 22201'),
+('NCI003', 'Bayrakdar', 'Omer', 're/Start', '2026765848', 'hellooo@gmail.com', '3345 Main St. #1940, Alexandria, VA, 22201'),
 ('NCI004', 'Daniel', 'Caccavelli', 're/Start', '4348675309', 'this@that.com', '1234 Main St. Danville VA 24541'),
-('NCI005', 'Joven', 'Poblete', 're/Start', '123456789', 'email@gmail.com', '0987 East St, Washington, DC 20002'),
-('NCI006', 'Yasin', 'Tasasiz', 're/Start', '135792468', 'yasin@mail.com', '1234 West St. Ashburn VA 20148'),
-('NCI007','Jing', 'wang',  're/Start', '7033896293',  'janeff1110@gmail.com','12311 Field Lark Ct. ,Fairfax, VA22033'),
+('NCI005', 'Joven', 'Poblete', 're/Start', '123456789', 'email@gmail.com', '0000 East St, Washington, DC 20002'),
+('NCI006', 'Yasin', 'Tasasiz', 're/Start', '135792468', 'yasin@mail.com', '1234 East St. Ashburn VA 20148'),
+('NCI007','Jing', 'wang',  're/Start', '7033896293',  'janeff1110@gmail.com','12334 Carry Lark Ct. ,Fairfax, VA 22033'),
 ('NCI008', 'Joe', 'Mitchell', 're/Start', '5555555556', 'seequill@email.com', '245 Street Rd City, Maine 64334'),
-('NCI009','Rufina', 'Kim', 're/Start','3451230987','testdb@email.com','2585 Freedom sq Chantilly VA 20169'),
-('NCI010', 'Pushpa', 'Munagala', 're/Start', '123987675', 'pushpa@pushpa.com', '7689 liberty sq, Ny, 30939'),
-('NCI011', 'Andrew', 'Hopkins', 're/start', '0987654321' , 'Database@data.com' , '543 South Liberty Akron, OH'),
-('NCI012', 'Andres', 'Mejia', 're/start', '5435454354', 'Dres@email.com', '12345 Bushtower st, Aldie, VA')
+('NCI009','Rufina', 'Kim', 're/Start','3451230987','testdb@email.com','2222 Freedom sq Chantilly VA 20169'),
+('NCI010', 'Pushpa', 'Munagala', 're/Start', '123987675', 'pushpa@pushpa.com', '7888 liberty sq, Ny, 30939'),
+('NCI011', 'Andrew', 'Hopkins', 're/start', '0987654321' , 'Database@data.com' , '12345 South Liberty Akron, OH'),
+('NCI012', 'Andres', 'Mejia', 're/start', '5435454354', 'Dres@email.com', '12345 HAHAHA st, Aldie, VA')
 -- end of insert data section
 
--- read section
+-- START OF READ SECTION
 SELECT employee_id, employee_firstname, employee_lastname, employee_phone, CONCAT('$', employee_salary) AS "Salary" FROM employee
--- end of read section
+SELECT * FROM nci_student
+
 
 -- TINYINT => 1 byte, 0 to 255
 -- SMALLINT => 2 bytes, -215 (-32,768) to 215-1 (32,767)
@@ -77,3 +78,12 @@ SELECT NOW() AS "Date & Time", DATE(NOW()) AS "Date Portion", TIME(NOW()) AS "Ti
 -- This returns:
 --     Now               Date Portion     Time Portion
 -- 2021-04-09 16:33:00	   2021-04-09	    16:33:00
+
+
+-- This prints all records starting at 5 (offset) and only print 6 records (limit)
+SELECT CONCAT(std_id, '=> OH ', firstname, '. I know where you live now. You dont believe me? Well, here is it. You live @ ', address)  AS "I Know what you did last summer"
+FROM nci_student LIMIT 6 OFFSET 4
+
+-- END OF READ SECTION
+
+
