@@ -52,5 +52,17 @@ INSERT INTO products (product_name, product_price, product_type, product_color, 
 ('Data Center', 1453200.99, 'iPad', 'Silver', '12 Inch', 'USA', 250, NULL)
 
 
+-- This is JUST a Result Set
+SELECT product_id AS ID, product_name AS Name, product_price Price, product_type AS "Type", product_color Color, product_size "Size", 
+product_origin AS Origin, product_qty Quantity, product_purchase_date "Purchase Date" 
+FROM products
 
-SELECT * FROM products
+-- Returns product names where the purchase date is NULL in the table
+SELECT * 
+FROM products 
+WHERE product_purchase_date IS NULL
+
+-- Returns product names where the purchase date is NOT NULL in the table
+SELECT * 
+FROM products 
+WHERE product_purchase_date IS NOT NULL
