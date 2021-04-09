@@ -29,8 +29,15 @@ ALTER TABLE products
 RENAME COLUMN product_quantity TO product_qty
 
 -- Change the name of the products table to product
-ALTER TABLE products 
+ALTER TABLE products
 RENAME TO product
+
+-- TRUNCATE => Empties out the date, but not drop it
+TRUNCATE TABLE products
+
+-- DROP=> Drops the table (Remove)
+DROP TABLE products
+
 
 -- Describes a table [skeleton of the table]
 -- Displays Table fields, types, key, constraints
@@ -44,3 +51,6 @@ INSERT INTO products (product_name, product_price, product_type, product_color, 
 ('iPad Pro', 1200.99, 'iPad', 'Silver', '12 Inch', 'USA', 250, '2010-01-01'),
 ('Data Center', 1453200.99, 'iPad', 'Silver', '12 Inch', 'USA', 250, NULL)
 
+
+
+SELECT * FROM products
