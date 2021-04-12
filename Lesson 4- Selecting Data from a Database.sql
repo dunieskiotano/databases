@@ -67,4 +67,10 @@ CREATE TABLE player -- table player
 	player_status VARCHAR(10) NOT NULL
 )
 
-
+INSERT INTO player (player_name, player_score, player_lastdatePlayed, player_TShirtNumber, player_status) VALUES
+('Pushpa', 1000, '2020-12-31', 10, 'active'),
+('Omer', 999, '2021-01-13', 12, 'active'),
+('Aicha', 800, '2021-01-07', 14, 'active'),
+('Daniel', 1100, '2012-01-25', 9, 'retired'),
+('Byron', 1500, '2015-11-20', 9, 'retired'),
+('Mtagui', 3000, '2017-11-20', 9, 'unknown')
