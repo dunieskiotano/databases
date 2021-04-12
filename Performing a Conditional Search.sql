@@ -117,6 +117,7 @@ FROM products
 WHERE NOT product_price BETWEEN 1300 AND 1700
 -- -----------------------------
 
+
 CREATE TABLE citizen 
 (
 	citizen_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -129,7 +130,15 @@ CREATE TABLE citizen
 )
 
 
-
+INSERT INTO citizen (citizen_firstname, citizen_lastname, citizen_city, citizen_state, citizen_retirement_date, citizen_year_of_birth) VALUES
+('Pushpa', 'Munagala', 'Ashburn', 'VA', '2020-12-10', 1980),
+('Aicha', 'Diallo', 'Ashburn', 'VA', '2015-01-10', 1995),
+('Dunieski','Otano', 'Miami', 'FL', NULL, 1976),
+('Megan', 'Kumar', 'Houston', 'TX', NULL, 2001),
+('Yanet', 'Perez', 'Miami', 'FL', NULL, 2000),
+('Gayle', 'Jones', 'Bowie', 'MD', '2012-10-10', 1985),
+('Sheila', 'McCustion', 'Tupelo', 'MS', '2016-09-09', 1990),
+('Daniel', 'Caccavelli', 'Dry Fork', 'VA', NULL, 1992)
 
 
 
