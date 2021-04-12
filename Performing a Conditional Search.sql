@@ -99,6 +99,37 @@ WHERE NOT product_manufacturer = 'Apple' OR product_name = 'Dell' AND product_pr
 SELECT * FROM products 
 WHERE NOT (product_manufacturer = 'Apple' OR product_name = 'Dell') AND product_price> 1600
 
+-- Return all products, either Apple or Dell, with a price greater than $1,600
+SELECT * FROM products 
+WHERE (product_manufacturer = 'Apple' OR product_name = 'Dell') AND product_price> 1600
+-- ---------------------------
+
+
+-- BETWEEN Operations --------
+-- Return all products whose price is between $1,300 and $1,700
+SELECT * 
+FROM products 
+WHERE product_price BETWEEN 1300 AND 1700
+
+-- Return all products whose price is NOT between $1,300 and $1,700
+SELECT * 
+FROM products 
+WHERE NOT product_price BETWEEN 1300 AND 1700
+-- -----------------------------
+
+CREATE TABLE citizen 
+(
+	citizen_id INT PRIMARY KEY AUTO_INCREMENT,
+	citizen_firstname VARCHAR(10) NOT NULL,
+	citizen_lastname VARCHAR(10) NOT NULL,
+	citizen_city VARCHAR(15) NOT NULL,
+	citizen_state VARCHAR(20) NOT NULL,
+	citizen_retirement_date DATE,
+	citizen_year_of_birth VARCHAR(4) NOT NULL	
+)
+
+
+
 
 
 
