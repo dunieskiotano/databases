@@ -91,4 +91,8 @@ WHERE player_score BETWEEN 1000 AND 1500
 -- Return the sum of all the player scores and an average of the player scores => SUM(), AVG(), ROUND()
 SELECT SUM(player_score) AS "Total Score" , ROUND(AVG(player_score), 2) AS "Average Score" FROM player
 
-
+-- Return all players with a score higher than 1000 and grouped by status
+SELECT COUNT(player_status) AS "Number Of Players", player_status "Status", player_score "Score"
+FROM player
+GROUP BY player_status
+HAVING player_score > 1000
