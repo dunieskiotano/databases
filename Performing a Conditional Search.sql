@@ -48,3 +48,63 @@ WHERE product_manufacturer = 'Apple' OR product_price > 1200
 -- TRUE or FALSE => TRUE
 -- FALSE or FALSE => FALSE
 
+-- Arithmetic Operators
+-- Return Product Name, Iterms Purchased, Subtotal, Taxes, and Grade Total
+SELECT 
+product_name AS "Product Name",
+product_price AS "Product Price",
+'2' AS "Items Purchased",
+product_price * 2 AS "Subtotal",
+ROUND(product_price * 0.07, 2) AS Taxes,
+ROUND(product_price * 2 + product_price * 0.07, 2) AS "Grand Total"
+FROM products
+
+-- Return all products whose price + 200 is greater than $1,600
+SELECT * FROM products 
+WHERE product_price + 200 > 1600
+
+-- Alias for columns
+SELECT p.product_name AS Name
+FROM products
+
+
+-- Query order of execution
+-- FROM and JOIN s. The FROM clause, and subsequent JOINs are first executed to determine the total working set of data that is being queried. ...
+-- WHERE. ...
+-- GROUP BY. ...
+-- HAVING. ...
+-- SELECT. ...
+-- DISTINCT. ...
+-- ORDER BY. ...
+
+-- NOT Operator ------
+-- Returns products whose manufacturer is not Apple
+SELECT * 
+FROM products 
+WHERE NOT product_manufacturer = 'Apple'
+
+-- AND and NOT Operators
+-- Return products whose price is more than $1,000 but their manufacturer is NOT Apple
+SELECT * 
+FROM products 
+WHERE product_price > 1000 AND NOT product_manufacturer = 'Apple' -- To become True, both need to be TRUE, product MUST be > 1000 and manufacture MUST NOT be Apple
+-- ---------------------
+
+-- AND and OR Operators -----
+-- Return all products with a price > $1,000, but basically returns all products BUT Apple products
+SELECT * FROM products 
+WHERE NOT product_manufacturer = 'Apple' OR product_name = 'Dell' AND product_price> 1600
+
+-- Return all products, except for Apple or Dell, with price greater than $1,600
+SELECT * FROM products 
+WHERE NOT (product_manufacturer = 'Apple' OR product_name = 'Dell') AND product_price> 1600
+
+
+
+
+
+
+
+
+
+
