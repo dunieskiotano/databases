@@ -221,7 +221,10 @@ SELECT *
 FROM citizen 
 WHERE citizen_lastname REGEXP '^....[o-t]$'
 
-
+-- Regular expressions -- basically all last names
+SELECT * 
+FROM citizen 
+WHERE citizen_lastname REGEXP '^....*$'
 
 
 
