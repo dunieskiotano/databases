@@ -207,7 +207,7 @@ SELECT *
 FROM citizen 
 WHERE citizen_firstname LIKE '_u%'
 
--- Regular expressions
+-- Regular expressions, returns all years that end with a character between 1 and 5
 SELECT * 
 FROM citizen 
 WHERE citizen_year_of_birth REGEXP '^...[1-5]$'
