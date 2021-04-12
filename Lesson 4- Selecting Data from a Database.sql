@@ -96,3 +96,30 @@ SELECT COUNT(player_status) AS "Number Of Players", player_status "Status", play
 FROM player
 GROUP BY player_status
 HAVING player_score > 1000
+
+-- Return the year, month, day from a date
+SELECT YEAR('2020-01-01') -- function YEAR()
+SELECT MONTH('2020-01-01') -- function MONTH()
+SELECT DAY('2020-01-01') -- function DAY()
+
+-- Return only active players
+SELECT * 
+FROM player
+WHERE player_status = 'active'
+
+-- ------------------------------
+CREATE TABLE cohort3
+(
+	student_name VARCHAR(10) NOT NULL,
+	student_grade DECIMAL(4,2) NOT NULL
+)
+
+INSERT INTO cohort3 VALUES('Dunieski', 98.55), ('Pushpa', 99.5), ('Aicha', 99.7)
+
+-- Return average grade with fucntion AVG()
+SELECT AVG(student_grade) "Averaged Grade" FROM cohort3 
+
+-- Return average of grades, functions AVG(), SUM(), COUNT()
+SELECT AVG(student_grade) AS "Using function AVG()", SUM(student_grade)/COUNT(student_grade) AS "Using functions SUM() and COUNT()"
+FROM cohort3
+-- ------------------------------
