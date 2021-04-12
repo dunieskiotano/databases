@@ -24,6 +24,10 @@ INSERT INTO products (product_name, product_manufacturer, product_price, product
 ('Toshiba', 'Toshiba', 1256.00, 'Laptop', 'White', '17 Inch', 'USA', 210, '2021-04-12'),
 ('LG Monitor', 'LG', 1300, 'Monitor', 'Black', '38 Inch', 'USA', 500, NULL)
 
+INSERT INTO products (product_name, product_manufacturer, product_price, product_type, product_color, product_size, product_origin, product_quantity, product_purchase_date) VALUES
+('Wireless Keyboard', 'LG', 1300.99, 'Monitor', 'Black', '12 Inch', 'USA', 200, NULL),
+('Thunderbold 3 Dock', 'OWC', 399.99, 'Dock', 'Silver', '7 Inch', 'USA', 100, '2020-03-01')
+
 -- --------------------------------------
 
 -- Multiple Search Condition with multiple operators
@@ -32,5 +36,15 @@ SELECT product_name, product_price
 FROM products 
 WHERE product_manufacturer = 'Apple' AND product_price > 1200
 
-drop table products
+-- Return all products whose manufacturer is Apple OR cost is more than $1,200
+SELECT product_name, product_price
+FROM products 
+WHERE product_manufacturer = 'Apple' OR product_price > 1200
+
+-- TRUE and TRUE => TRUE
+-- TRUE and FALSE => FALSE
+-- FALSE and FALSE => FALSE
+-- TRUE or TRUE => TRUE
+-- TRUE or FALSE => TRUE
+-- FALSE or FALSE => FALSE
 
