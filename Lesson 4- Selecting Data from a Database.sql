@@ -74,3 +74,21 @@ INSERT INTO player (player_name, player_score, player_lastdatePlayed, player_TSh
 ('Daniel', 1100, '2012-01-25', 9, 'retired'),
 ('Byron', 1500, '2015-11-20', 9, 'retired'),
 ('Mtagui', 3000, '2017-11-20', 9, 'unknown')
+
+-- Return list of scores from the highest to lowest in descending order
+SELECT player_name, player_score FROM player ORDER BY player_score DESC 
+
+-- Return the players whose score is higher than 1000
+SELECT player_name, player_score 
+FROM player 
+WHERE player_score > 1000 ORDER BY player_name
+
+-- Return the players whose score is between 1000 and 1500
+SELECT player_name, player_score 
+FROM player
+WHERE player_score BETWEEN 1000 AND 1500
+
+-- Return the sum of all the player scores and an average of the player scores => SUM(), AVG(), ROUND()
+SELECT SUM(player_score) AS "Total Score" , ROUND(AVG(player_score), 2) AS "Average Score" FROM player
+
+
