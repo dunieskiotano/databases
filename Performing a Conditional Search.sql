@@ -141,6 +141,7 @@ INSERT INTO citizen (citizen_firstname, citizen_lastname, citizen_city, citizen_
 ('Daniel', 'Caccavelli', 'Dry Fork', 'VA', NULL, 1992)
 
 
+
 -- IN Operator ----- 
 -- Return only the citizens that live in FL and VA
 SELECT * 
@@ -156,6 +157,71 @@ WHERE citizen_city = 'Miami' AND citizen_retirement_date IS NULL
 SELECT * 
 FROM citizen 
 WHERE citizen_retirement_date IS NOT NULL 
+
+
+-- LIKE Operator
+-- Return all cities that start with M
+SELECT *
+FROM citizen 
+WHERE citizen_city LIKE 'M%'
+
+-- Return all cities that end with i
+SELECT *
+FROM citizen 
+WHERE citizen_city LIKE '%i'
+
+
+-- Return all cities that contain 'ow'
+SELECT *
+FROM citizen 
+WHERE citizen_city LIKE '%ow%'
+
+-- Return all last names that contain 'cca'
+SELECT *
+FROM citizen 
+WHERE citizen_lastname LIKE '%cca%'
+
+-- Return all first names that start with P
+SELECT *
+FROM citizen 
+WHERE citizen_firstname LIKE 'P%'
+
+
+-- Return all first name that with p
+SELECT *
+FROM citizen 
+WHERE citizen_firstname LIKE 'p%'
+
+SELECT *
+FROM citizen 
+WHERE LOWER(citizen_firstname) LIKE 'p%'
+
+-- LOWER()
+SELECT LOWER('DuniESki')
+
+-- UPPER()
+SELECT UPPER('dunieski')
+
+-- Return all first names whose second letter is 'u', the (_) wildcard represents a single character
+SELECT *
+FROM citizen 
+WHERE citizen_firstname LIKE '_u%'
+
+-- Regular expressions
+SELECT * 
+FROM citizen 
+WHERE citizen_year_of_birth REGEXP '^...[1-5]$'
+
+
+
+
+
+
+
+
+
+
+
 
 
 
