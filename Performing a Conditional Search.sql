@@ -141,7 +141,21 @@ INSERT INTO citizen (citizen_firstname, citizen_lastname, citizen_city, citizen_
 ('Daniel', 'Caccavelli', 'Dry Fork', 'VA', NULL, 1992)
 
 
+-- IN Operator ----- 
+-- Return only the citizens that live in FL and VA
+SELECT * 
+FROM citizen
+WHERE citizen_state IN ('FL', 'VA')
 
+-- IS NULL Clause
+SELECT * 
+FROM citizen 
+WHERE citizen_city = 'Miami' AND citizen_retirement_date IS NULL 
+
+-- IS NOT NULl Clause
+SELECT * 
+FROM citizen 
+WHERE citizen_retirement_date IS NOT NULL 
 
 
 
