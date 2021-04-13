@@ -65,6 +65,30 @@ SELECT * FROM student
 
 -- Returns the average grade of every student grouped by student ID
 -- printed in descending order with a grade greater than 94
+SELECT studentid AS "Student ID", 
+firstname "First Name", ROUND(AVG(grade), 2) AS "Average Grade"
+FROM student 
+GROUP BY studentid 
+HAVING AVG(grade) > 94 
+ORDER BY AVG(grade) DESC
 
+-- NTILE() Function
+SELECT studentid AS "Student ID", firstname "First Name", subject,
+NTILE(3) OVER(PARTITION BY studentid ORDER BY grade DESC)
+FROM student 
+
+
+-- Returns all students ordered by studentid DESC
+SELECT * 
+FROM 
+(
+	SELECT studentid, firstname, grade, subjectid FROM student
+) AS st
+ORDER BY studentid DESC
+
+-- EQUIVALENT
+SELECT studentid, firstname, grade, subjectid 
+FROM student 
+ORDER BY studentid DESC
 
 
