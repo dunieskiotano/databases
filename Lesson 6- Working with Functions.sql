@@ -1,5 +1,7 @@
 -- Lesson 6: Working with Functions
 
+
+
 SELECT TIME(NOW()) -- Nested functions
 
 -- --- TABLE CREATION SECTION ---
@@ -84,7 +86,7 @@ SELECT UCASE('The United States')
 -- Similar to LOWER()
 SELECT LCASE('The United States')
 
--- CONCAT()
+-- CONCAT() function
 SELECT @maxprice := MAX(product_price) FROM product 
 
 SELECT DISTINCT @maxprice FROM product p 
@@ -106,4 +108,36 @@ SELECT CONCAT(LTRIM('                         Cuba'), ' is great')
 
 -- Remove all spaces (leading and trailing) with the function TRIM()
 SELECT CONCAT('-', TRIM('            Cuba             '), '-')
+
+SELECT CONCAT('My ID is NCI-', 5, ' True ', 100, ' hi')
 -- Returns -Cuba-
+
+
+-- SUBSTRING() function
+SELECT product_name, SUBSTRING(product_name, 3, 10) FROM product  
+
+-- Capitalize the second letter of the word cuba [cUba]
+SELECT CONCAT('c', UCASE(SUBSTRING('cuba', 2, 1)), SUBSTRING('cuba', 3, LENGTH('cuba'))) AS "Cuba - first letter capitalized"
+
+-- Add 1 day to today's date using functions DATE_ADD() and NOW()
+SELECT DATE_ADD(DATE(NOW()), INTERVAL 1 DAY)
+
+-- Add 1 day to today's date using functions DATE_ADD() and CURDATE()
+SELECT DATE_ADD(CURDATE(), INTERVAL 1 DAY)
+
+-- Add 3 hours
+SELECT DATE_ADD(CURTIME(), INTERVAL 3 HOUR)
+
+-- Add 3 hours with date format
+SELECT DATE_FORMAT(DATE_ADD(CURTIME(), INTERVAL 3 HOUR), '%h:%i:%s %p')
+
+-- Purchase time
+SELECT CONCAT('Purchase Time: ', DATE_FORMAT(CURTIME(), '%h:%i %p'), '----- Available at: ', DATE_FORMAT(DATE_ADD(CURTIME(), INTERVAL 1 HOUR), '%h:%i %p')) 
+       
+-- Return a different between two dates with function DATEDIFF()
+SELECT DATEDIFF(CURDATE(), DATE_ADD(CURDATE(), INTERVAL 1 MONTH)) AS "Difference in Days"
+
+SELECT DATEDIFF(CURDATE(), DATE_SUB(CURDATE(), INTERVAL 1 MONTH)) AS "Difference in Days"
+
+
+
