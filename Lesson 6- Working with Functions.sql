@@ -28,4 +28,11 @@ INSERT INTO product (product_name, product_manufacturer, product_price) VALUES
 ('HP XPS360', 'HP', 2400.99),
 ('Lenovo', 'Lenovo', 2000.99)
 
+INSERT INTO time_test VALUES (CURDATE(), '2020-10-20')
 -- --- END OF INSERT DATA SECTION ---
+
+-- CURDATE() and CURTIME()
+SELECT CURDATE(), DATE(NOW()), CURTIME(), TIME(NOW())
+
+-- MANIPULATE DATA FROM product TABLE
+
