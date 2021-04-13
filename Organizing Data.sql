@@ -52,3 +52,19 @@ INSERT INTO student (studentid, firstname, grade, subject, subjectid) VALUES
 ('NCI05', 'Essie', 97.5, 'Computer Science', '003')
 
 -- END of INSERT DATA Section
+
+SELECT * FROM citizen 
+
+
+SELECT *, ROW_NUMBER() OVER(ORDER BY citizen_year_of_birth DESC) AS "Row Number" FROM citizen
+
+-- Returns the top years of birth in the table citizen
+SELECT citizen_firstname, citizen_year_of_birth FROM citizen ORDER BY citizen_year_of_birth DESC LIMIT 5
+
+SELECT * FROM student
+
+-- Returns the average grade of every student grouped by student ID
+-- printed in descending order with a grade greater than 94
+
+
+
