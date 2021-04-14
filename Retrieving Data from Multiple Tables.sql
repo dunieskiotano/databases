@@ -44,6 +44,10 @@ CREATE TABLE orders
 	FOREIGN KEY (product_id) REFERENCES product (product_id) ON UPDATE CASCADE ON DELETE CASCADE	
 )
 
+SELECT * FROM users
+SELECT * FROM product 
+
+
 CREATE TABLE product
 (
 	product_id SMALLINT PRIMARY KEY AUTO_INCREMENT,
@@ -87,6 +91,19 @@ INSERT INTO product (product_name, product_quantity, product_price) VALUES
 ('MacBook Pro', 800, 2500.99),
 ('Apple Watch', 150, 500.99),
 ('Dell', 250, 900.99)
+
+INSERT INTO orders (order_date, order_total, user_id, product_id) VALUES
+('2010-10-10', 100.00, 1, 2),
+('2010-09-09', 345.99, 1, 1),
+('2009-08-08', 450.99, 2, 3),
+('2019-07-10', 600.00, 3, 2),
+('2016-06-10', 300.00, 3, 4),
+('2017-07-10', 700.00, 3, 3),
+('2020-10-10', 200.00, 4, 1),
+('2019-01-01', 1000.00, 5, 5),
+('2015-03-03', 1200.00, 4, 5),
+('2015-03-03', 1200.00, 6, 5),
+('2015-03-03', 1200.00, NULL, 5)
 -- -----------------------
 
 -- MANIPULATE DATA
