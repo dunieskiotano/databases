@@ -21,7 +21,7 @@ CREATE TABLE staff
 	last_name TEXT NOT NULL,
 	email TEXT NOT NULL,
 	phone TEXT NOT NULL,
-	manager_id INT NULL
+	manager_id TINYINT NULL
 )
 
 
