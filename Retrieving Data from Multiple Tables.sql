@@ -44,9 +44,6 @@ CREATE TABLE orders
 	FOREIGN KEY (product_id) REFERENCES product (product_id) ON UPDATE CASCADE ON DELETE CASCADE	
 )
 
-SELECT * FROM users
-SELECT * FROM product 
-
 
 CREATE TABLE product
 (
@@ -100,13 +97,32 @@ INSERT INTO orders (order_date, order_total, user_id, product_id) VALUES
 ('2016-06-10', 300.00, 3, 4),
 ('2017-07-10', 700.00, 3, 3),
 ('2020-10-10', 200.00, 4, 1),
-('2019-01-01', 1000.00, 5, 5),
+('2019-01-01', 1000.00,, 5 5),
 ('2015-03-03', 1200.00, 4, 5),
 ('2015-03-03', 1200.00, 6, 5),
 ('2015-03-03', 1200.00, NULL, 5)
+
+INSERT INTO staff (first_name,last_name, email, phone, manager_id) VALUES
+('Fabiola', 'Jackson', 'employee@example1.com', '786-973-2044', NULL),
+('Mireya', 'Copeland', 'employee@example2.com','786-973-2045', 1),
+('Genna', 'Serrano', 'employee@example3.com','786-973-2046', 2),
+('Virgie', 'Wiggins', 'employee@example4.com','786-973-2046', 2),
+('Jannette', 'David', 'employee@example5.com','786-973-2047', 1),
+('Marcelene', 'Boyer', 'employee@example6.com','786-973-2048', 5),
+('Venita', 'Daniel', 'employee@example7.com','786-973-2049', 5),
+('Kali', 'Vargas', 'employee@example8.com','786-973-2050', 1),
+('Layla', 'Terrell', 'employee@example9.com','786-973-2051', 7),
+('Bernandine', 'Houston', 'employee@example10.com','786-973-2052', 7)
 -- -----------------------
 
+
+
 -- MANIPULATE DATA
+
+-- SELECT 
+SELECT * FROM users
+SELECT * FROM product 
+-- ------
 
 -- UNION Operator
 SELECT movie_main_actor, movie_director
@@ -114,4 +130,52 @@ FROM new_movies
 UNION ALL
 SELECT movie_release_date, movie_name
 FROM old_movies
+
+-- CROSS JOIN 
+SELECT * FROM users
+CROSS JOIN orders
+
+-- INNER JOIN
+SELECT u.firstname, u.lastname, u.email, o.order_id, o.order_total, p.product_id, p.product_name , p.product_price, p.product_quantity 
+FROM users u
+INNER JOIN orders o ON u.user_id = o.user_id 
+INNER JOIN product p ON p.product_id = o.product_id 
+
+-- CONCATENATION WITH INNER JOIN
+SELECT CONCAT(u.firstname, ' bought a(n) ', p.product_name, '  ---------- Order ID =>  ', o.order_id) AS "Order Info"
+FROM users u
+INNER JOIN orders o ON u.user_id = o.user_id 
+INNER JOIN product p ON p.product_id = o.product_id 
+
+-- HOMEWORK
+-- 1. Create three tables (student, grades, course)
+-- 2. Return the students with all grades and all courses they have taken
+-- 3. Create a concatenated string with the info
+
+-- LEFT JOIN
+SELECT u.firstname, o.order_id
+FROM users u
+LEFT JOIN orders o ON u.user_id = o.user_id 
+
+-- RIGHT JOIN
+SELECT u.firstname, o.order_id
+FROM users u
+RIGHT JOIN orders o ON u.user_id = o.user_id
+
+
+/*CREATE TABLE staff
+(
+	staff_id SMALLINT PRIMARY KEY AUTO_INCREMENT,
+	first_name TEXT NOT NULL,
+	last_name TEXT NOT NULL,
+	email TEXT NOT NULL,
+	phone TEXT NOT NULL,
+	manager_id TINYINT NULL
+)*/
+
+-- SELF JOIN 
+
+
+
+
 
