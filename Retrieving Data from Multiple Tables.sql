@@ -174,8 +174,10 @@ RIGHT JOIN orders o ON u.user_id = o.user_id
 )*/
 
 -- SELF JOIN 
-
-
+SELECT CONCAT(employee.first_name, ' ', employee.last_name) AS Employee,
+CONCAT(manager.first_name, ' ', manager.last_name) AS "Report To"
+FROM staff AS employee
+LEFT JOIN staff AS manager ON manager.staff_id = employee.manager_id
 
 
 
