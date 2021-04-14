@@ -180,14 +180,15 @@ FROM staff AS employee
 LEFT JOIN staff AS manager ON manager.staff_id = employee.manager_id
 
 -- Returns:
-Fabiola Jackson	 NULL
-Mireya Copeland	Fabiola Jackson
-Genna Serrano	Mireya Copeland
-Virgie Wiggins	Mireya Copeland
-Jannette David	Fabiola Jackson
-Marcelene Boyer	Jannette David
-Venita Daniel	Jannette David
-Kali Vargas	Fabiola Jackson
-Layla Terrell	Venita Daniel
-Bernandine Houston	Venita Daniel
+  Employee            Reports To
+Fabiola Jackson	      NULL
+Mireya Copeland	      Fabiola Jackson
+Genna Serrano	      Mireya Copeland
+Virgie Wiggins	      Mireya Copeland
+Jannette David	      Fabiola Jackson
+Marcelene Boyer	      Jannette David
+Venita Daniel	      Jannette David
+Kali Vargas	          Fabiola Jackson
+Layla Terrell	      Venita Daniel
+Bernandine Houston	  Venita Daniel
 
