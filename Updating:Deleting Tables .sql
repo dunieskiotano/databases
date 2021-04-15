@@ -23,10 +23,10 @@ INSERT INTO computer (computer_id, computer_type, computer_manufacturer, compute
 SELECT * FROM computer;
 COMMIT;
 
--- Delete a record by ID
+-- Delete a record found by ID
 DELETE FROM computer WHERE computer_id = 'TD-002';
 
--- Update a record by ID
+-- Update a record found by ID
 UPDATE computer SET computer_country_of_origin = 'USA' WHERE computer_id = 'TD-001'
 
 -- Update several fields at the same time
@@ -35,4 +35,14 @@ UPDATE computer SET
 	computer_manufacturer = 'Toshiba, Inc',
 	computer_country_of_origin = 'Japan'
 WHERE computer_id = 'TD-001'
+
+
+-- Delete a table
+DROP TABLE IF EXISTS computer
+
+-- Delete data in a table
+TRUNCATE TABLE computer
+
+-- Show fields, types, constraints, keys, etc in a table
+DESCRIBE computer
 
