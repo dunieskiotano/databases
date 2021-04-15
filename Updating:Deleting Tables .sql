@@ -7,7 +7,7 @@
 -- • D - Durable: Once is there, it's there
 
 -- Doesn't work with DBeaver, but it does with MySQL Workbench
--- START TRANSACTION;
+START TRANSACTION;
 CREATE TABLE computer
 (
 	computer_id VARCHAR(10) PRIMARY KEY NOT NULL,
@@ -21,7 +21,7 @@ INSERT INTO computer (computer_id, computer_type, computer_manufacturer, compute
 ('TD-002', 'Dell', 'Dell', 'Bangladesh')
 
 SELECT * FROM computer;
--- COMMIT;
+COMMIT;
 
 -- Delete a record by ID
 DELETE FROM computer WHERE computer_id = 'TD-002';
